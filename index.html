@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ContactHub - Smart Contact Manager">
+  <link rel="shortcut icon" href="imgs/phone-book.png">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <!-- font awesome -->
+  <link rel="stylesheet" href="css/all.min.css">
+  <!-- media style -->
+  <link rel="stylesheet" href="css/media.css">
+  <!-- custom css -->
+  <link rel="stylesheet" href="css/style.css">
+  <title>ContactHub - Smart Contact Manager</title>
+</head>
+
+<body>
+  <nav class="bg-white py-2 p-lg-3">
+    <div class="container-lg d-flex align-items-center justify-content-between">
+      <div class="name d-flex align-items-center gap-2 ">
+        <div class="icon"><i class="fa-solid fa-address-book"></i></div>
+        <div class="title">
+          <h2 class="m-0 fw-bold">Contact</h2>
+          <span>Smart Contact Manager</span>
+        </div>
+      </div>
+      <div class="left d-flex align-items-center gap-4">
+        <button type="button" class="fw-bold" data-bs-toggle="modal" data-bs-target="#exampleModal"><i
+            class="fa-solid fa-plus "></i> Add Contact</button>
+        <div class="min-icon d-flex justify-content-center align-items-center d-none d-md-flex "><i
+            class="fa-solid fa-bell"></i></div>
+        <div class="min-icon d-flex justify-content-center align-items-center d-none d-md-flex"><i
+            class="fa-solid fa-gear"></i></div>
+        <div class="img"><img src="imgs/avatar-2.jpg" alt=""></div>
+      </div>
+    </div>
+  </nav>
+  <main class="my-5">
+    <section class="container-lg">
+      <div id="contact-cards">
+        `<div class="row g-2">
+          <div class="col-6 col-lg-4">
+            <div class="main-card  total d-flex align-items-center gap-3 bg-white">
+              <div class="icon"><i class="fa-solid fa-people-group"></i></i></div>
+              <div class="content">
+                <h6 class="m-0 fw-bolder text-black-50">Total</h6>
+                <span class="fw-bold fs-3">0</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-6 col-lg-4">
+            <div class="main-card  Favorites d-flex align-items-center gap-3 bg-white">
+              <div class="icon"><i class="fa-solid fa-star"></i></div>
+              <div class="content">
+                <h6 class="m-0 fw-bolder text-black-50">Favorites</h6>
+                <span class="fw-bold fs-3">0</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-6 col-lg-4">
+            <div class="main-card  emergency d-flex align-items-center gap-3 bg-white">
+              <div class="icon"><i class="fa-solid fa-heart-pulse"></i></div>
+              <div class="content">
+                <h6 class="m-0 fw-bolder text-black-50">Emergency</h6>
+                <span class="fw-bold fs-3">0</span>
+              </div>
+            </div>
+          </div>
+        </div>`
+      </div>
+
+      <div class="row my-5">
+        <div class="col-12 col-lg-9">
+          <div class="contants-header d-flex flex-column gap-2 mb-4">
+            <h2 class="fw-bold m-0">All Contacts</h2>
+            <span class="text-black-50">Manage and organize your 0 contacts</span>
+            <div class="search-bar position-relative mt-4">
+              <i class="fa-solid fa-magnifying-glass position-absolute text-black-50"></i>
+              <input id="searchInput" type="search" class="w-100 " placeholder="Search for contacts...">
+            </div>
+          </div>
+          <div class="row" id="person-card">
+
+          </div>
+        </div>
+        <div class="col-12 col-lg-3 d-flex flex-column gap-4">
+          <div class="fav-contact">
+            <div class="fav-head d-flex align-items-center gap-2 ">
+              <div class="icon"><i class="fa-solid fa-star"></i></div>
+              <div class="title">
+                <h4 class="m-0 fw-bold m-0">Favorites</h4>
+                <span class="text-black-50">Quick access to starred contacts</span>
+              </div>
+            </div>
+            <div class="fav-body">
+              <div class="no-contact text-center text-black-50 ">
+                <p class="noFav">No favorite contacts yet.</p>
+                <div class="fav-min-card d-none  d-flex flex-column gap-1 mb-3">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="emg-contact">
+            <div class="emg-head d-flex align-items-center gap-2 ">
+              <div class="icon"><i class="fa-solid fa-heart-pulse"></i></div>
+              <div class="title">
+                <h4 class="m-0 fw-bold m-0">Emergency</h4>
+                <span class="text-black-50">Important contacts for urgent calls</span>
+              </div>
+            </div>
+            <div class="emg-body">
+              <div class="no-contact text-center text-black-50 ">
+                <p class="noEmg">No emergency contacts yet.</p>
+                <div class="emg-min-card d-flex  flex-column gap-1 mb-3">
+
+                </div>
+
+
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog ">
+        <div class="modal-content  p-2">
+          <div class="modal-header">
+            <h5 class="modal-title fs-3 fw-bold" id="exampleModalLabel">Add New Contact</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="img-rounded w-100 m-20 d-flex justify-content-center align-items-center flex-column gap-3 mb-4">
+              <div class="img bg-primary d-flex justify-content-center align-items-center"><i
+                  class="fa-solid fa-user fs-3 text-white"></i></div>
+              <button class="rounded-3 text-center p-1"><i class="fa-solid fa-camera"></i> Change Photo</button>
+
+
+
+            </div>
+
+            <form>
+              <div class="mb-3">
+                <label for="contactName" class="form-label fw-bold">Full Name <span class="text-danger">*</span></label>
+                <input required type="text" class="form-control" id="contactName" placeholder="Enter full name">
+              </div>
+              <div class="mb-3">
+                <label for="contactPhone" class="form-label fw-bold">Phone Number<span
+                    class="text-danger">*</span></label>
+                <input required type="tel" class="form-control" id="contactPhone" placeholder="e.g., 01012345678">
+              </div>
+              <div class="mb-3">
+                <label for="contactEmail" class="form-label fw-bold">Email Address</label>
+                <input required type="email" class="form-control" id="contactEmail" placeholder="name@example.com">
+              </div>
+              <div class="mb-3">
+                <label for="contactAddress" class="form-label fw-bold">Address</label>
+                <input type="text" class="form-control" id="contactAddress" placeholder="Enter address">
+              </div>
+              <div class="mb-3">
+                <label for="contactGroup" class="form-label fw-bold">Group</label>
+                <select type="text" class="form-control" id="contactGroup" placeholder="Enter group">
+                  <option value="">select a group</option>
+                  <option value="Family">Family</option>
+                  <option value="Friends">Friends</option>
+                  <option value="Work">Work</option>
+                  <option value="school">school</option>
+                  <option value="other">other</option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <label for="contactNotes" class="form-label fw-bold">Notes</label>
+                <textarea name="contactNotes" id="contactNotes" class="form-control"
+                  placeholder="Enter notes"></textarea>
+              </div>
+              <div class="buttons d-flex flex-column gap-3">
+                <div class="right">
+                  <input type="checkbox" id="facheack" name="facheack">
+                  <label for="facheack"><i class="fa-solid fa-star" style="color: rgb(255, 212, 59);"></i>
+                    Favorite</label>
+                  <input class="p-3" type="checkbox" id="emgcheck" name="emgcheck">
+                  <label for="emgcheck"><i class="fa-solid fa-heart-pulse" style="color: rgb(255, 0, 0);"></i>
+                    Emergency</label>
+                </div>
+                <div class="left d-flex align-items-center gap-2 ">
+                  <button type="button" class=" close-form fw-bold" data-bs-dismiss="modal">Close</button>
+                  <button type="button" class="save-form fw-bold"><i class="fa-solid fa-check"></i> Save
+                    Contact</button>
+                </div>
+
+
+              </div>
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>
